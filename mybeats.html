@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Beats - Favorite Music</title>
+
+  <style>
+    body {
+      background-color: #f4f4f4;
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* HEADER */
+    header {
+      background-color: #eaeaea;
+      padding: 10px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ccc;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 { margin: 0; font-size: 24px; }
+
+    /* DROPDOWN NAVIGATION */
+    .dropdown { position: relative; display: inline-block; }
+    .dropbtn {
+      text-decoration: none;
+      font-weight: bold;
+      color: #2a5db0;
+      font-size: 18px;
+      padding: 20px 10px;
+      display: inline-block;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: #eaeaea;
+      min-width: 200px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .dropdown-content a {
+      color: #2a5db0;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      font-weight: bold;
+    }
+    .dropdown-content a:hover { background-color: #d1d1d1; }
+    .dropdown:hover .dropdown-content { display: block; }
+
+    /* PAGE CONTENT */
+    .page {
+      max-width: 1100px;
+      background: #eaeaea;
+      margin: 40px auto;
+      padding: 40px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    /* THE CHECKBOX HACK - Hide the actual checkboxes */
+    .toggle-input {
+      display: none;
+    }
+
+    /* GENRE SELECTOR */
+    .genre-selector {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    .genre-btn {
+      cursor: pointer;
+      width: 250px;
+      transition: 0.3s;
+    }
+
+    .genre-btn img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      border: 4px solid white;
+    }
+
+    .genre-btn p {
+      font-size: 20px;
+      font-weight: bold;
+      color: #2a5db0;
+      margin-top: 15px;
+    }
+
+    .genre-btn:hover { transform: translateY(-5px); }
+
+    /* MUSIC CARDS - Hidden by default */
+    .genre-card {
+      display: none; 
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      text-align: left;
+      max-width: 600px;
+      margin: 20px auto;
+    }
+
+    /* CSS LOGIC: Show card if checkbox is checked */
+    #toggle-hiphop:checked ~ .music-display #hiphop-card,
+    #toggle-metal:checked ~ .music-display #metal-card,
+    #toggle-opm:checked ~ .music-display #opm-card {
+      display: block;
+    }
+
+    /* Visual feedback: change border color when active */
+    #toggle-hiphop:checked ~ .genre-selector label[for="toggle-hiphop"] img,
+    #toggle-metal:checked ~ .genre-selector label[for="toggle-metal"] img,
+    #toggle-opm:checked ~ .genre-selector label[for="toggle-opm"] img {
+      border-color: #2a5db0;
+    }
+
+    .genre-name {
+      font-size: 24px;
+      font-weight: bold;
+      color: #2a5db0;
+      display: block;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #2a5db0;
+      padding-bottom: 10px;
+    }
+
+    .song-item { margin-bottom: 25px; }
+    .song-info { display: block; font-weight: bold; color: #444; margin-bottom: 8px; }
+    .artist-name { font-weight: normal; color: #888; font-size: 15px; }
+    audio { width: 100%; height: 40px; }
+
+    .bottom-links { margin-top: 50px; }
+    .bottom-links a {
+      text-decoration: none;
+      color: white;
+      background-color: #2a5db0;
+      padding: 12px 25px;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1><em>Explore with Al</em></h1>
+  <nav>
+    <div class="dropdown">
+      <a href="#" class="dropbtn">Explore ▾</a>
+      <div class="dropdown-content">
+        <a href="index.html">Main Page</a>
+        <a href="biography.html">Biography</a>
+        <a href="gallery.html">Photo Gallery</a>
+        <a href="blog1.html">Blog Part 1</a>
+        <a href="blog2.html">Blog Part 2</a>
+        <a href="blog3.html">Blog Part 3</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div class="page">
+  <h2>Vibe Check</h2>
+  <p style="color: #666; margin-bottom: 40px;">Click the pictures to toggle the music collections (you can open more than one!).</p>
+
+  <input type="checkbox" id="toggle-hiphop" class="toggle-input">
+  <input type="checkbox" id="toggle-metal" class="toggle-input">
+  <input type="checkbox" id="toggle-opm" class="toggle-input">
+
+  <div class="genre-selector">
+    <label for="toggle-hiphop" class="genre-btn">
+      <img src="covers/kendrick.png" alt="Hiphop">
+      <p>Hiphop</p>
+    </label>
+
+    <label for="toggle-metal" class="genre-btn">
+      <img src="covers/metal.png" alt="Metal">
+      <p>Metal/Alternative</p>
+    </label>
+
+    <label for="toggle-opm" class="genre-btn">
+      <img src="covers/opm.jpg" alt="OPM">
+      <p>OPM</p>
+    </label>
+  </div>
+
+  <hr style="border: 0; height: 1px; background: #ccc; margin: 30px 0;">
+
+  <div class="music-display">
+    
+    <div class="genre-card" id="hiphop-card">
+      <span class="genre-name">Hiphop Collection</span>
+      <div class="song-item">
+        <span class="song-info">Not Like Us <span class="artist-name">| Kendrick Lamar</span></span>
+        <audio controls><source src="music/not like us.mp4" type="video/mp4"></audio>
+      </div>
+      <div class="song-item">
+        <span class="song-info">All Eyes On Me <span class="artist-name">| Tupac</span></span>
+        <audio controls><source src="music/all eyes on me 2pac.mp4" type="audio/mpeg"></audio>
+      </div>
+    </div>
+
+    <div class="genre-card" id="metal-card">
+      <span class="genre-name">Metal Collection</span>
+      <div class="song-item">
+        <span class="song-info">Toxicity <span class="artist-name">| System Of A Down</span></span>
+        <audio controls><source src="music/toxicity SOD.webm" type="audio/mpeg"></audio>
+      </div>
+      <div class="song-item">
+        <span class="song-info">Smells Like a Teen Spirit <span class="artist-name">| Nirvana</span></span>
+        <audio controls><source src="music/smells like a teen spirit.webm" type="audio/mpeg"></audio>
+      </div>
+    </div>
+
+    <div class="genre-card" id="opm-card">
+      <span class="genre-name">OPM Collection</span>
+      <div class="song-item">
+        <span class="song-info">Stay <span class="artist-name">| Cueshe</span></span>
+        <audio controls><source src="music/stay opm.webm" type="audio/mpeg"></audio>
+      </div>
+      <div class="song-item">
+        <span class="song-info">Alapaap <span class="artist-name">| Eraserheads</span></span>
+        <audio controls><source src="music/alapaap.webm" type="audio/mpeg"></audio>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="bottom-links">
+    <a href="index.html">← Back to Main Page</a>
+  </div>
+</div>
+
+</body>
+</html>

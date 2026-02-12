@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog Stories - Landing Page</title>
 
   <style>
@@ -15,7 +15,7 @@
 
     header {
       background-color: #eaeaea;
-      padding: 20px 40px;
+      padding: 10px 40px; /* Reduced padding to help the hover bridge */
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -30,26 +30,74 @@
       font-size: 24px;
     }
 
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      gap: 20px;
+    /* --- STICKY DROPDOWN NAVIGATION --- */
+    .dropdown {
+      position: relative;
+      display: inline-block;
     }
 
-    nav ul li a {
+    .dropbtn {
       text-decoration: none;
       font-weight: bold;
       color: #2a5db0;
+      font-size: 18px;
+      padding: 20px 10px; /* Vertical padding makes the hover area larger */
+      display: inline-block;
       transition: color 0.3s;
     }
 
-    nav ul li a:hover {
-      color: black;
-      text-decoration: underline;
+    .dropdown-content {
+      display: none; 
+      position: absolute;
+      right: 0; 
+      background-color: #eaeaea;
+      min-width: 200px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+      z-index: 1001;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      /* Ensures there is no gap between the button and the list */
+      top: 100%; 
     }
 
+    /* THE FIX: Invisible bridge so the menu doesn't disappear when moving the mouse */
+    .dropdown::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      right: 0;
+      width: 100%;
+      height: 20px; /* Bridges any tiny gap */
+    }
+
+    .dropdown-content a {
+      color: #2a5db0;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      font-weight: bold;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .dropdown-content a:last-child {
+      border-bottom: none;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #d1d1d1;
+      color: black;
+    }
+
+    /* Keep the menu open when hovering the button OR the content itself */
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+      color: black;
+    }
+
+    /* --- PAGE CONTENT STYLES --- */
     .page {
       max-width: 1400px;
       width: 90%;
@@ -82,23 +130,30 @@
       margin: 40px 0;
     }
 
-    a:hover {
-      color: black;
-    }
-
     .profile-img {
       width: 200px;
       height: 200px;
       object-fit: cover;
       float: right;
-      margin-left: 10px;
+      margin-left: 20px;
       margin-bottom: 20px;
+      border-radius: 10px;
     }
 
     video {
       width: 80%;
       border-radius: 20px;
       margin-top: 15px;
+    }
+
+    a {
+      color: #2a5db0;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: black;
+      text-decoration: underline;
     }
   </style>
 
@@ -109,14 +164,17 @@
 <header>
   <h1><em>Explore with Al</em></h1>
   <nav>
-    <ul>
-      <li><a href="biography.html" target="_blank">Biography</a></li>
-      <li><a href="blog1.html" target="_blank">Blog Part 1</a></li>
-      <li><a href="blog2.html" target="_blank">Blog Part 2</a></li>
-      <li><a href="blog3.html" target="_blank">Blog Part 3</a></li>
-      <li><a href="gallery.html" target="_blank">Photo Gallery</a></li>
-      
-    </ul>
+    <div class="dropdown">
+      <a href="#" class="dropbtn">Explore ▾</a>
+      <div class="dropdown-content">
+        <a href="biography.html" target="_blank">My Personal Journey</a>
+        <a href="blog1.html" target="_blank">Why I Prefer Edge</a>
+        <a href="blog2.html" target="_blank">IT Realities</a>
+        <a href="blog3.html" target="_blank">The 5-Year Goal</a>
+        <a href="gallery.html" target="_blank">Photo Gallery</a>
+        <a href="mybeats.html" target="_blank">Tuned In</a>
+      </div>
+    </div>
   </nav>
 </header>
 
