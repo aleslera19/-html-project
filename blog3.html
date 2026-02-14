@@ -12,16 +12,65 @@
       padding: 0;
     }
 
+    /* HEADER & DROPDOWN STYLES */
+    header {
+      background-color: #eaeaea;
+      padding: 10px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ccc;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 { margin: 0; font-size: 24px; }
+
+    .dropdown { position: relative; display: inline-block; }
+    
+    .dropbtn {
+      text-decoration: none;
+      font-weight: bold;
+      color: #2a5db0;
+      font-size: 18px;
+      padding: 20px 10px;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: #eaeaea;
+      min-width: 200px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .dropdown-content a {
+      color: #2a5db0;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      font-weight: bold;
+    }
+
+    .dropdown-content a:hover { background-color: #d1d1d1; }
+    .dropdown:hover .dropdown-content { display: block; }
+
+    /* PAGE LAYOUT */
     .page {
       max-width: 1000px;
       background: #eaeaea;
-      margin: 0 auto;
+      margin: 40px auto;
       padding: 40px;
       border-radius: 10px;
       margin-bottom: 50px;
     }
 
-    h1 {
+    h1.blog-title {
       text-align: center;
       margin-bottom: 25px;
     }
@@ -50,7 +99,6 @@
       margin: 40px 0;
     }
 
-    
     .back-btn {
       text-align: center;
       margin-top: 30px;
@@ -69,13 +117,30 @@
       background-color: #1e437e;
     }
   </style>
-
 </head>
 <body>
 
+<header>
+  <h1><em>Explore with Al</em></h1>
+  <nav>
+    <div class="dropdown">
+      <a href="#" class="dropbtn">Explore ▾</a>
+      <div class="dropdown-content">
+        <a href="index.html">Main Page</a>
+        <a href="biography.html">My Personal Journey</a>
+        <a href="blog1.html">Why I Prefer Edge</a>
+        <a href="blog2.html">IT Realities</a>
+        <a href="gallery.html">Photo Gallery</a>
+        <a href="mybeats.html">Tuned In</a>
+        <a href="filmshows.html">Night Owl Binge List</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
 <div class="page">
 
-  <h1><em>From Student to Professional: My 5-Year Vision</em></h1>
+  <h1 class="blog-title"><em>From Student to Professional: My 5-Year Vision</em></h1>
 
   <h2><strong>Where I’m Heading: My IT Journey Begins</strong></h2>
   <p>
@@ -104,7 +169,6 @@
       Sa loob ng limang taon, gusto kong maging IT professional na may <strong>stable career at masaya na pamilya</strong>. Ang mga plano ko ay nakakatulong para mas focus ako sa gusto ko mangyari, pero kailangan din maging handa sa unexpected challenges. Ang takeaway ko, mas masarap na maging successful kung kasama mo yung mga mahal mo sa buhay. Gusto kong patuloy na mag-work hard, matuto, at i-enjoy ang bawat moment. Sa huli, kasiyahan at fulfillment ay makukuha sa balanseng buhay.
   </p>
 
- 
   <div class="back-btn">
     <a href="index.html">← Back to Home Page</a>
   </div>

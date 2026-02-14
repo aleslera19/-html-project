@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -13,16 +12,65 @@
       padding: 0;
     }
 
+    /* HEADER & DROPDOWN STYLES */
+    header {
+      background-color: #eaeaea;
+      padding: 10px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ccc;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 { margin: 0; font-size: 24px; }
+
+    .dropdown { position: relative; display: inline-block; }
+    
+    .dropbtn {
+      text-decoration: none;
+      font-weight: bold;
+      color: #2a5db0;
+      font-size: 18px;
+      padding: 20px 10px;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: #eaeaea;
+      min-width: 200px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .dropdown-content a {
+      color: #2a5db0;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      font-weight: bold;
+    }
+
+    .dropdown-content a:hover { background-color: #d1d1d1; }
+    .dropdown:hover .dropdown-content { display: block; }
+
+    /* PAGE LAYOUT */
     .page {
       max-width: 1000px;
       background: #eaeaea;
-      margin: 0 auto;
+      margin: 40px auto;
       padding: 40px;
       border-radius: 10px;
       margin-bottom: 50px;
     }
 
-    h1 {
+    h1.blog-title {
       text-align: center;
       margin-bottom: 25px;
     }
@@ -51,7 +99,6 @@
       margin: 40px 0;
     }
 
-    /* IMAGE STYLE (added) */
     .side-img {
       float: right;
       width: 170px;
@@ -78,52 +125,65 @@
       background-color: #1e437e;
     }
   </style>
-
 </head>
 <body>
 
+<header>
+  <h1><em>Explore with Al</em></h1>
+  <nav>
+    <div class="dropdown">
+      <a href="#" class="dropbtn">Explore ▾</a>
+      <div class="dropdown-content">
+        <a href="index.html">Main Page</a>
+        <a href="biography.html">My Personal Journey</a>
+        <a href="blog1.html">Why I Prefer Edge</a>
+        <a href="blog3.html">The 5-Year Goal</a>
+        <a href="gallery.html">Photo Gallery</a>
+        <a href="mybeats.html">Tuned In</a>
+        <a href="filmshows.html">Night Owl Binge List</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
 <div class="page">
 
-  <h1><em>Life as an IT Student: Expectations vs Reality</em></h1>
+  <h1 class="blog-title"><em>Life as an IT Student: Expectations vs Reality</em></h1>
 
   <h2><strong>Getting Started</strong></h2>
   <p>
-      <img src="itstudent.jpg" alt="IT Student Photo" class="side-img">
-
-```
-  Noong nagdesisyon ako na kunin ang course na <strong>Information Technology,</strong> marami akong mataas na expectations tungkol sa magiging college life ko. Akala ko puro coding, hardware, at paggawa ng systems ang magiging focus ng course na ito. Inisip ko rin na dahil interesado ako sa technology, magiging madali lang para sa akin ang mga units. Excited ako sa idea na matututo ako sa programming at kung paano gumawang mga application. Ngunit habang tumatagal, unti-unti kong narerealize na mas malawak at mas mahirap pala ang course na IT kaysa sa ineexpect ko.
-```
-
+    <img src="itstudent.jpg" alt="IT Student Photo" class="side-img">
+    Noong nagdesisyon ako na kunin ang course na <strong>Information Technology,</strong> marami akong mataas na expectations tungkol sa magiging college life ko. Akala ko puro coding, hardware, at paggawa ng systems ang magiging focus ng course na ito. Inisip ko rin na dahil interesado ako sa technology, magiging madali lang para sa akin ang mga units. Excited ako sa idea na matututo ako sa programming at kung paano gumawang mga application. Ngunit habang tumatagal, unti-unti kong narerealize na mas malawak at mas mahirap pala ang course na IT kaysa sa ineexpect ko.
   </p>
 
   <hr>
 
   <h2><strong>My Experience</strong></h2>
   <p>
-      Sa mga naranasan ko sa ngayon bilang IT student, napansin ko na hindi lang pala coding ang sakop ng course na ito. Maraming subjects ang nangangailangan ng matinding focus at oras. Hindi rin palaging madali ang programming dahil madalas may naeencounter ako na errors na nahihirapan ako ayusin. Dahil dito, natutunan kong maging mas patient at mas magfocus sa pag-aaral.
+    Sa mga naranasan ko sa ngayon bilang IT student, napansin ko na hindi lang pala coding ang sakop ng course na ito. Maraming subjects ang nangangailangan ng matinding focus at oras. Hindi rin palaging madali ang programming dahil madalas may naeencounter ako na errors na nahihirapan ako ayusin. Dahil dito, natutunan kong maging mas patient at mas magfocus sa pag-aaral.
   </p>
 
   <p>
-      Ilan ito sa mga naranasan ko sa ngayon bilang IT student:
+    Ilan ito sa mga naranasan ko sa ngayon bilang IT student:
   </p>
 
   <ul>
-      <li>Pag-aaral ng iba’t ibang programming languages na kailangan ang logic at consistency</li>
-      <li>Paghanap sa errors at bugs na hindi agad nakikita ang solusyon</li>
-      <li>Pag-aaral ng networking, hardware, at database concepts</li>
-      <li>Paggawa ng documentation at system analysis bukod sa coding</li>
-      <li>Pakikipag-collaborate sa mga kaklase sa group collaborations</li>
+    <li>Pag-aaral ng iba’t ibang programming languages na kailangan ang logic at consistency</li>
+    <li>Paghanap sa errors at bugs na hindi agad nakikita ang solusyon</li>
+    <li>Pag-aaral ng networking, hardware, at database concepts</li>
+    <li>Paggawa ng documentation at system analysis bukod sa coding</li>
+    <li>Pakikipag-collaborate sa mga kaklase sa group collaborations</li>
   </ul>
 
   <p>
-      Bukod sa <strong>technical skills,</strong> mas naimprove ko rin ang <strong>time management at communication skills</strong>. Madalas sabay-sabay ang quizzes, activities, at deadlines kaya kailangan ng time management. Mas naging challenging ito kapag may group works na nangangailangan ng teamwork at responsibility. Sa kabuuan, mas naging handa ako sa mga hamon ng course na IT.
+    Bukod sa <strong>technical skills,</strong> mas naimprove ko rin ang <strong>time management at communication skills</strong>. Madalas sabay-sabay ang quizzes, activities, at deadlines kaya kailangan ng time management. Mas naging challenging ito kapag may group works na nangangailangan ng teamwork at responsibility. Sa kabuuan, mas naging handa ako sa mga hamon ng course na IT.
   </p>
 
   <hr>
 
   <h2><strong>Final Thoughts</strong></h2>
   <p>
-      Sa kabila ng lahat ng inaaral, masasabi kong marami akong natututunan bilang isang IT student. Hindi ito ang mga inexpect ko nung una, mas makabuluhan naman ang aking karanasan. Natutunan kong maging mas patient, mas masipag, at mas magpursige sa pag-abot ng aking mga gustong maabot sa course na 'to. Ang bawat hirap at pagkakamali ay nagsilbing aral para sa aking personal at academic growth. Hindi madali ang course na IT, ngunit naniniwala akong sulit ang lahat ng pagod at sakripisyo sa huli.
+    Sa kabila ng lahat ng inaaral, masasabi kong marami akong natutunang bilang isang IT student. Hindi ito ang mga inexpect ko nung una, mas makabuluhan naman ang aking karanasan. Natutunan kong maging mas patient, mas masipag, at mas magpursige sa pag-abot ng aking mga gustong maabot sa course na 'to. Ang bawat hirap at pagkakamali ay nagsilbing aral para sa aking personal at academic growth. Hindi madali ang course na IT, ngunit naniniwala akong sulit ang lahat ng pagod at sakripisyo sa huli.
   </p>
 
   <div class="back-btn">

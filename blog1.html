@@ -12,16 +12,65 @@
       padding: 0;
     }
 
+    /* HEADER & DROPDOWN STYLES */
+    header {
+      background-color: #eaeaea;
+      padding: 10px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ccc;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 { margin: 0; font-size: 24px; }
+
+    .dropdown { position: relative; display: inline-block; }
+    
+    .dropbtn {
+      text-decoration: none;
+      font-weight: bold;
+      color: #2a5db0;
+      font-size: 18px;
+      padding: 20px 10px;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: #eaeaea;
+      min-width: 200px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .dropdown-content a {
+      color: #2a5db0;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      font-weight: bold;
+    }
+
+    .dropdown-content a:hover { background-color: #d1d1d1; }
+    .dropdown:hover .dropdown-content { display: block; }
+
+    /* PAGE LAYOUT */
     .page {
       max-width: 1000px;
       background: #eaeaea;
-      margin: 0 auto;
+      margin: 40px auto;
       padding: 40px;
       border-radius: 10px;
       margin-bottom: 50px;
     }
 
-    h1 {
+    h1.blog-title {
       text-align: center;
       margin-bottom: 25px;
     }
@@ -44,7 +93,6 @@
       margin: 40px 0;
     }
 
-    
     .back-btn {
       text-align: center;
       margin-top: 30px;
@@ -67,38 +115,55 @@
 </head>
 <body>
 
+<header>
+  <h1><em>Explore with Al</em></h1>
+  <nav>
+    <div class="dropdown">
+      <a href="#" class="dropbtn">Explore ▾</a>
+      <div class="dropdown-content">
+        <a href="index.html">Main Page</a>
+        <a href="biography.html">My Personal Journey</a>
+        <a href="blog2.html">IT Realities</a>
+        <a href="blog3.html">The 5-Year Goal</a>
+        <a href="gallery.html">Photo Gallery</a>
+        <a href="mybeats.html">Tuned In</a>
+        <a href="filmshows.html">Night Owl Binge List</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
 <div class="page">
 
-  <h1><em>My Experience Using Microsoft Edge as an IT Student</em></h1>
+  <h1 class="blog-title"><em>My Experience Using Microsoft Edge as an IT Student</em></h1>
 
   <h2><strong>Getting Started</strong></h2>
   <p>
-     Dati, hindi ko talaga napapansin ang Microsoft Edge. Para sa akin, isa lang siyang browser na naka-install na agad sa Windows at ginagamit ko lang kapag wala akong choice. Pero habang dumadami ang school requirements at mas napapadalas akong gumagamit ng PC bilang isang IT student, unti-unti kong napansin na mas madalas ko na pala siyang ginagamit. Hindi ko namamalayan, naging part na siya ng daily routine ko.
+      Dati, hindi ko talaga napapansin ang Microsoft Edge. Para sa akin, isa lang siyang browser na naka-install na agad sa Windows at ginagamit ko lang kapag wala akong choice. Pero habang dumadami ang school requirements at mas napapadalas akong gumagamit ng PC bilang isang IT student, unti-unti kong napansin na mas madalas ko na pala siyang ginagamit. Hindi ko namamalayan, naging part na siya ng daily routine ko.
   </p>
 
   <hr>
 
   <h2><strong>My Experience</strong></h2>
   <p>
-      Noong una kong sinubukan gamitin ang Microsoft Edge, wala talaga akong mataas na expectations. Akala ko tipikal na browser lang din siya gaya ng Google Chrome na walang pagkakaiba sa kanila. Habang ginagamit ko siya para sa research, online classes, at paggawa ng reports, napansin ko kung gaano siya ka-<strong>bilis at smooth</strong>. Kahit maraming tabs ang bukas, smooth pa rin ang performance niya, na sobrang nakakatulong lalo na kapag maraming requirements sa school.
+       Noong una kong sinubukan gamitin ang Microsoft Edge, wala talaga akong mataas na expectations. Akala ko tipikal na browser lang din siya gaya ng Google Chrome na walang pagkakaiba sa kanila. Habang ginagamit ko siya para sa research, online classes, at paggawa ng reports, napansin ko kung gaano siya ka-<strong>bilis at smooth</strong>. Kahit maraming tabs ang bukas, smooth pa rin ang performance niya, na sobrang nakakatulong lalo na kapag maraming requirements sa school.
   </p>
 
   <p>
-     Isa sa mga features na pinaka nagustuhan ko ay ang Collections. Kapag nagre-research ako, madalas maraming websites ang binubuksan ko, at dahil dito mas madali kong na-oorganize lahat ng links at notes ko sa isang place. Pwede akong bumalik anytime kapag kailangan ko ulit. Malaking tulong din ang built-in PDF reader neto dahil nakakapag-highlight at basa ako ng documents na hindi na kailangan pa ng ibang application. Dahil dito, mas naging organized ako at mas napadali ang pagmumultitask ko ng mga gawain.
+      Isa sa mga features na pinaka nagustuhan ko ay ang Collections. Kapag nagre-research ako, madalas maraming websites ang binubuksan ko, at dahil dito mas madali kong na-oorganize lahat ng links at notes ko sa isang place. Pwede akong bumalik anytime kapag kailangan ko ulit. Malaking tulong din ang built-in PDF reader neto dahil nakakapag-highlight at basa ako ng documents na hindi na kailangan pa ng ibang application. Dahil dito, mas naging organized ako at mas napadali ang pagmumultitask ko ng mga gawain.
   </p>
 
   <p>
-      Bilang isang IT student, madalas akong sabay-sabay gumagamit ng browser, coding tools, at iba pang applications. Napansin ko na hindi masyadong mabigat ang system ng Microsoft Edge kumpara sa ibang browsers na nasubukan ko dati. Dahil dito, mas smooth ang takbo ng PC ko kahit nagmumultitask ako, kaya mas nakakapag-focus ako sa lessons at mas mabilis kong natatapos ang mga projects ko.
+       Bilang isang IT student, madalas akong sabay-sabay gumagamit ng browser, coding tools, at iba pang applications. Napansin ko na hindi masyadong mabigat ang system ng Microsoft Edge kumpara sa ibang browsers na nasubukan ko dati. Dahil dito, mas smooth ang takbo ng PC ko kahit nagmumultitask ako, kaya mas nakakapag-focus ako sa lessons at mas mabilis kong natatapos ang mga projects ko.
   </p>
 
   <hr>
 
   <h2><strong>What I Learned</strong></h2>
   <p>
-     Sa huli, napansin ko na dapat pansinin ang mga default applications na nakainstall sa mga device. Nakita ko sa Microsoft Edge na kaya nya sumabay sa mga kilala nang browser pagdating sa daily workflow dahil sa speed, useful features, at pagiging reliable niya. Ang natutunan ko rito ay minsan kailangan lang talagang subukan ang mga tools para makita kung paano ito makakatulong sa mga ginagawa mo. Balak ko nang gawin na default browser ko ang Edge, balak ko pang i-explore ang ibang features neto para mas maging productive ako sa school at matulungan ako neto sa pag gawa ng mga gawain ko sa course ko.
+      Sa huli, napansin ko na dapat pansinin ang mga default applications na nakainstall sa mga device. Nakita ko sa Microsoft Edge na kaya nya sumabay sa mga kilala nang browser pagdating sa daily workflow dahil sa speed, useful features, at pagiging reliable niya. Ang natutunan ko rito ay minsan kailangan lang talagang subukan ang mga tools para makita kung paano ito makakatulong sa mga ginagawa mo. Balak ko nang gawin na default browser ko ang Edge, balak ko pang i-explore ang ibang features neto para mas maging productive ako sa school at matulungan ako neto sa pag gawa ng mga gawain ko sa course ko.
   </p>
 
-  
   <div class="back-btn">
     <a href="index.html">← Back to Home Page</a>
   </div>

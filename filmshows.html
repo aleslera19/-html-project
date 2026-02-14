@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Screen Time - Movies & Series</title>
+
+  <style>
+    body {
+      background-color: #f4f4f4;
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* HEADER */
+    header {
+      background-color: #eaeaea;
+      padding: 10px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ccc;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 { margin: 0; font-size: 24px; }
+
+    /* DROPDOWN NAVIGATION */
+    .dropdown { position: relative; display: inline-block; }
+    .dropbtn {
+      text-decoration: none;
+      font-weight: bold;
+      color: #2a5db0;
+      font-size: 18px;
+      padding: 20px 10px;
+      display: inline-block;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: #eaeaea;
+      min-width: 200px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .dropdown-content a {
+      color: #2a5db0;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      font-weight: bold;
+    }
+    .dropdown-content a:hover { background-color: #d1d1d1; }
+    .dropdown:hover .dropdown-content { display: block; }
+
+    /* PAGE CONTENT */
+    .page {
+      max-width: 1100px;
+      background: #eaeaea;
+      margin: 40px auto;
+      padding: 40px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    /* THE CHECKBOX HACK */
+    .toggle-input {
+      display: none;
+    }
+
+    /* CATEGORY SELECTOR */
+    .genre-selector {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    .genre-btn {
+      cursor: pointer;
+      width: 280px;
+      transition: 0.3s;
+    }
+
+    .genre-btn img {
+      width: 100%;
+      height: 400px; 
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      border: 4px solid white;
+    }
+
+    .genre-btn p {
+      font-size: 22px;
+      font-weight: bold;
+      color: #2a5db0;
+      margin-top: 15px;
+    }
+
+    .genre-btn:hover { transform: translateY(-5px); }
+
+    /* CARDS */
+    .genre-card {
+      display: none; 
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      text-align: left;
+      max-width: 750px;
+      margin: 20px auto;
+    }
+
+    /* ITEM ROW WITH PHOTO */
+    .item-row { 
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      margin-bottom: 25px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .item-row:last-child { border-bottom: none; }
+
+    .list-photo {
+      width: 100px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+      flex-shrink: 0;
+    }
+
+    .item-text { flex: 1; }
+
+    .item-info { display: block; font-weight: bold; color: #2a5db0; font-size: 18px; margin-bottom: 8px; }
+    .item-desc { font-weight: normal; color: #555; font-size: 15px; line-height: 1.5; display: block; }
+
+    /* LOGIC */
+    #toggle-movies:checked ~ .music-display #movies-card,
+    #toggle-series:checked ~ .music-display #series-card {
+      display: block;
+    }
+
+    #toggle-movies:checked ~ .genre-selector label[for="toggle-movies"] img,
+    #toggle-series:checked ~ .genre-selector label[for="toggle-series"] img {
+      border-color: #2a5db0;
+    }
+
+    .genre-name {
+      font-size: 24px;
+      font-weight: bold;
+      color: #2a5db0;
+      display: block;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #2a5db0;
+      padding-bottom: 10px;
+    }
+
+    .bottom-links { margin-top: 50px; }
+    .bottom-links a {
+      text-decoration: none;
+      color: white;
+      background-color: #2a5db0;
+      padding: 12px 25px;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1><em>Explore with Al</em></h1>
+  <nav>
+    <div class="dropdown">
+      <a href="#" class="dropbtn">Explore ▾</a>
+      <div class="dropdown-content">
+        <a href="index.html">Main Page</a>
+        <a href="biography.html">My Personal Journey</a>
+        <a href="blog1.html">Why I Prefer Edge</a>
+        <a href="blog2.html">IT Realities</a>
+        <a href="blog3.html">The 5 Year Goal</a>
+        <a href="gallery.html">Photo Gallery</a>
+        <a href="filmshows.html">Night Owl Binge List</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div class="page">
+  <h2>Al's Screen Time</h2>
+  <p style="color: #666; margin-bottom: 40px;">Click the posters below to see my top movie and series picks.</p>
+
+  <input type="checkbox" id="toggle-movies" class="toggle-input">
+  <input type="checkbox" id="toggle-series" class="toggle-input">
+
+  <div class="genre-selector">
+    <label for="toggle-movies" class="genre-btn">
+      <img src="moviespics/movies.jpg" alt="Movies">
+      <p>Favorite Movies</p>
+    </label>
+
+    <label for="toggle-series" class="genre-btn">
+      <img src="seriespics/seriescover.jpg" alt="Series">
+      <p>Must-Watch Series</p>
+    </label>
+  </div>
+
+  <hr style="border: 0; height: 1px; background: #ccc; margin: 30px 0;">
+
+  <div class="music-display">
+    
+    <div class="genre-card" id="movies-card">
+      <span class="genre-name">The Movie Collection</span>
+      
+      <div class="item-row">
+        <img src="moviespics/inception.jpg" alt="Inception" class="list-photo">
+        <div class="item-text">
+          <span class="item-info">Inception (2010)</span>
+          <span class="item-desc">A mind-bending sci-fi thriller about dreams within dreams.</span>
+        </div>
+      </div>
+
+      <div class="item-row">
+        <img src="moviespics/darkknight.jpg" alt="Dark Knight" class="list-photo">
+        <div class="item-text">
+          <span class="item-info">The Dark Knight</span>
+          <span class="item-desc">The ultimate superhero movie featuring an iconic performance by Heath Ledger.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="genre-card" id="series-card">
+      <span class="genre-name">Binge-Worthy Series</span>
+      
+      <div class="item-row">
+        <img src="seriespics/breakingbad.jpg" alt="Breaking Bad" class="list-photo">
+        <div class="item-text">
+          <span class="item-info">Breaking Bad</span>
+          <span class="item-desc">Follow the transformation of Walter White from teacher to kingpin.</span>
+        </div>
+      </div>
+
+      <div class="item-row">
+        <img src="seriespics/prisonbreak.jpg" alt="Prison Break" class="list-photo">
+        <div class="item-text">
+          <span class="item-info">Prison Break</span>
+          <span class="item-desc">An innocent man goes to prison to break out his brother on death row by using a map of the facility tattooed across his body.</span>
+        </div>
+      </div>
+
+      <div class="item-row">
+        <img src="seriespics/ozark.png" alt="Ozark" class="list-photo">
+        <div class="item-text">
+          <span class="item-info">Ozark</span>
+          <span class="item-desc">A financial advisor drags his family from Chicago to the Missouri Ozarks to launder $500 million for a drug cartel to keep them all alive.</span>
+        </div>
+      </div>
+
+      <div class="item-row">
+        <img src="seriespics/saul.jpg" alt="Better Call Saul" class="list-photo">
+        <div class="item-text">
+          <span class="item-info">Better Call Saul</span>
+          <span class="item-desc">The tragic and comedic transformation of Jimmy McGill as he descends into the world of crime to become the flamboyant lawyer Saul Goodman.</span>
+        </div>
+      </div>
+
+      <div class="item-row">
+        <img src="seriespics/twd.jpg" alt="Walking Dead" class="list-photo">
+        <div class="item-text">
+          <span class="item-info">The Walking Dead</span>
+          <span class="item-desc">In the aftermath of a zombie apocalypse, survivors struggle to stay alive against both the undead and the ruthless humans who remain.</span>
+        </div>
+      </div> 
+        <div class="item-row">
+        <img src="seriespics/narcos.jpg" alt="Narcos" class="list-photo">
+        <div class="item-text">
+          <span class="item-info">Narcos</span>
+          <span class="item-desc">A gritty, fact-based chronicle of the rise and fall of Pablo Escobar and the Medellín Drug Cartel, following the bloody battle between the billionaire kingpin and the DEA agents tasked with bringing him down.</span>
+        </div>
+      </div>
+      
+    </div>
+
+  </div>
+
+  <div class="bottom-links">
+    <a href="index.html">← Back to Main Page</a>
+  </div>
+</div>
+
+</body>
+</html>
