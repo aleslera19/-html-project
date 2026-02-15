@@ -1,64 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Friends Photos</title>
+  <meta charset="UTF-8">
+  <title>Friends Photos</title>
 
-<style>
-body{
-  background:#f4f4f4;
-  font-family: Arial, Helvetica, sans-serif;
-  margin:0;
-}
+  <style>
+    body {
+      background: #f4f4f4;
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      padding-bottom: 50px; /* Space for the bottom button */
+    }
 
-/* HEADER */
-header{
-  background:#eaeaea;
-  padding:20px 40px;
-  border-bottom:1px solid #ccc;
-}
+    /* HEADER */
+    header {
+      background: #eaeaea;
+      padding: 20px 40px;
+      border-bottom: 1px solid #ccc;
+    }
 
-header h1{
-  margin:0;
-}
+    header h1 {
+      margin: 0;
+    }
 
-/* GALLERY */
-.gallery{
-  max-width:1000px;
-  margin:40px auto;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
-}
+    /* GALLERY CONTAINER */
+    .gallery {
+      max-width: 1000px;
+      margin: 40px auto;
+      display: grid;
+      /* Adjust 250px to make images bigger or smaller */
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 0 20px;
+    }
 
-.gallery img{
-  width:100%;
-  border-radius:10px;
-  box-shadow:0 4px 10px rgba(0,0,0,0.15);
-  transition:.3s;
-}
+    /* UNIFORM IMAGE STYLES */
+    .gallery img {
+      width: 100%;
+      height: 250px;       /* Forces all photos to the same height */
+      object-fit: cover;   /* Crops the image to fit without stretching */
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      transition: 0.3s ease-in-out;
+      display: block;
+    }
 
-.gallery img:hover{
-  transform:scale(1.05);
-}
-</style>
+    .gallery img:hover {
+      transform: scale(1.05);
+      cursor: pointer;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    }
 
+    /* NAVIGATION BUTTON */
+    .nav-container {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .back-btn {
+      text-decoration: none;
+      color: white;
+      background-color: #2a5db0;
+      padding: 12px 25px;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .back-btn:hover {
+      background-color: #1e437e;
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-<h1>Friends Photos</h1>
+  <h1>Friends Photos</h1>
 </header>
 
 <div class="gallery">
 
-<a href="friends1.jpg" target="_blank">
-    <img src="friends1.jpg">
-<a href="friends2.jpg" target="_blank">
-    <img src="friends2.jpg">
+  <a href="friendspics/friends1.jpg" target="photo_viewer">
+    <img src="friendspics/friends1.jpg" alt="Friends 1">
+  </a>
 
+  <a href="friendspics/friends2.jpg" target="photo_viewer">
+    <img src="friendspics/friends2.jpg" alt="Friends 2">
+  </a>
 
+  <a href="friendspics/friends10.JPG" target="photo_viewer">
+    <img src="friendspics/friends10.JPG" alt="Friends 10">
+  </a>
+
+  <a href="friendspics/friends11.JPG" target="photo_viewer">
+    <img src="friendspics/friends11.JPG" alt="Friends 11">
+  </a>
+
+  <a href="friendspics/friends12.JPG" target="photo_viewer">
+    <img src="friendspics/friends12.JPG" alt="Friends 12">
+  </a>
+
+  <a href="friendspics/friends18.JPG" target="photo_viewer">
+    <img src="friendspics/friends18.JPG" alt="Friends 18">
+  </a>
+
+  <a href="friendspics/friends19.JPG" target="photo_viewer">
+    <img src="friendspics/friends19.JPG" alt="Friends 19">
+  </a>
+
+  <a href="friendspics/friends20.jpeg" target="photo_viewer">
+    <img src="friendspics/friends20.jpeg" alt="Friends 20">
+  </a>
+
+  <a href="friendspics/friends21.jpeg" target="photo_viewer">
+    <img src="friendspics/friends21.jpeg" alt="Friends 21">
+  </a>
+
+  <a href="friendspics/friends22.jpeg" target="photo_viewer">
+    <img src="friendspics/friends22.jpeg" alt="Friends 22">
+  </a>
+
+  <a href="friendspics/friends23.jpeg" target="photo_viewer">
+    <img src="friendspics/friends23.jpeg" alt="Friends 23">
+  </a>
+
+  <a href="friendspics/friends26.jpeg" target="photo_viewer">
+    <img src="friendspics/friends26.jpeg" alt="Friends 26">
+  </a>
+
+</div>
+
+<div class="nav-container">
+  <a href="index.html" class="back-btn">← Back to Home Page</a>
 </div>
 
 </body>
