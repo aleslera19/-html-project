@@ -68,6 +68,7 @@
       text-align: center;
     }
 
+    /* Hiding the radio buttons */
     .toggle-input { display: none; }
 
     /* GENRE SELECTOR */
@@ -115,7 +116,7 @@
       margin: 20px auto;
     }
 
-    /* NEW SONG ROW STRUCTURE */
+    /* SONG ROW STRUCTURE */
     .song-row {
       display: flex;
       align-items: center;
@@ -137,13 +138,14 @@
 
     .song-details { flex: 1; }
 
-    /* CSS LOGIC */
+    /* SELECTION LOGIC (Radio buttons) */
     #toggle-hiphop:checked ~ .music-display #hiphop-card,
     #toggle-metal:checked ~ .music-display #metal-card,
     #toggle-opm:checked ~ .music-display #opm-card {
       display: block;
     }
 
+    /* Highlight the selected genre border */
     #toggle-hiphop:checked ~ .genre-selector label[for="toggle-hiphop"] img,
     #toggle-metal:checked ~ .genre-selector label[for="toggle-metal"] img,
     #toggle-opm:checked ~ .genre-selector label[for="toggle-opm"] img {
@@ -198,11 +200,11 @@
 
 <div class="page">
   <h2>Vibe Check</h2>
-  <p style="color: #666; margin-bottom: 40px;">Click the pictures to toggle the music collections.</p>
+  <p style="color: #666; margin-bottom: 40px;">Click the pictures to switch between collections.</p>
 
-  <input type="checkbox" id="toggle-hiphop" class="toggle-input">
-  <input type="checkbox" id="toggle-metal" class="toggle-input">
-  <input type="checkbox" id="toggle-opm" class="toggle-input">
+  <input type="radio" id="toggle-hiphop" name="genre-toggle" class="toggle-input">
+  <input type="radio" id="toggle-metal" name="genre-toggle" class="toggle-input">
+  <input type="radio" id="toggle-opm" name="genre-toggle" class="toggle-input">
 
   <div class="genre-selector">
     <label for="toggle-hiphop" class="genre-btn">
@@ -212,7 +214,7 @@
 
     <label for="toggle-metal" class="genre-btn">
       <img src="covers/metal.png" alt="Metal">
-      <p>Metal/Alternative</p>
+      <p>Metal/Rock</p>
     </label>
 
     <label for="toggle-opm" class="genre-btn">
@@ -237,6 +239,30 @@
       </div>
 
       <div class="song-row">
+        <img src="covers/wminwm.jpg" alt="Album Art" class="album-art">
+        <div class="song-details">
+          <span class="song-info">Love Yourself <span class="artist-name">| EMINEM</span></span>
+          <audio controls><source src="music/EMINEM_-_Lose_Yourself_lyrics_256KBPS.webm" type="video/mp4"></audio>
+        </div>
+      </div>
+
+      <div class="song-row">
+        <img src="covers/blacked.jpg" alt="Album Art" class="album-art">
+        <div class="song-details">
+          <span class="song-info">Where Is The Love <span class="artist-name">| Black Eyed Peas</span></span>
+          <audio controls><source src="music/Black_eyed_peas_-_Where_Is_The_Love_Lyrics_Short_48KBPS.mp4" type="video/mp4"></audio>
+        </div>
+      </div>
+
+      <div class="song-row">
+        <img src="covers/J_ Cole.jpg" alt="Album Art" class="album-art">
+        <div class="song-details">
+          <span class="song-info">No Role Modelz <span class="artist-name">| J Cole</span></span>
+          <audio controls><source src="music/J._Cole_-_No_Role_Modelz_shorts_lyrics_48KBPS.mp4" type="video/mp4"></audio>
+        </div>
+      </div>
+
+      <div class="song-row">
         <img src="covers/2pac.jpg" alt="Album Art" class="album-art">
         <div class="song-details">
           <span class="song-info">All Eyes On Me <span class="artist-name">| Tupac</span></span>
@@ -246,13 +272,37 @@
     </div>
 
     <div class="genre-card" id="metal-card">
-      <span class="genre-name">Metal Collection</span>
+      <span class="genre-name">Metal/Rock Collection</span>
       
       <div class="song-row">
         <img src="covers/Soad!.jpg" alt="Album Art" class="album-art">
         <div class="song-details">
           <span class="song-info">Toxicity <span class="artist-name">| System Of A Down</span></span>
           <audio controls><source src="music/toxicity SOD.webm" type="audio/mpeg"></audio>
+        </div>
+      </div>
+
+      <div class="song-row">
+        <img src="covers/metallica wallpaper.jpg" alt="Album Art" class="album-art">
+        <div class="song-details">
+          <span class="song-info">Nothing Else Matters <span class="artist-name">| Metallica</span></span>
+          <audio controls><source src="music/Metallica_-_nothing_else_matters_shorts_youtubeshorts_shortvideo_fyp_lyrics_48KBPS.mp4" type="audio/mpeg"></audio>
+        </div>
+      </div>
+
+      <div class="song-row">
+        <img src="covers/Creed.jpg" alt="Album Art" class="album-art">
+        <div class="song-details">
+          <span class="song-info">One Last Breath <span class="artist-name">| Creed</span></span>
+          <audio controls><source src="music/One_Last_Breath_-_Creed_Shorts_48KBPS.webm" type="audio/mpeg"></audio>
+        </div>
+      </div>
+
+      <div class="song-row">
+        <img src="covers/Five for Fighting - Two Lights.jpg" alt="Album Art" class="album-art">
+        <div class="song-details">
+          <span class="song-info">Heaven Knows <span class="artist-name">| Five For Fighting</span></span>
+          <audio controls><source src="music/Five_for_Fighting_-_Heaven_Knows_Lyrics_music_bass_ytshorts_youtubeshorts_ytmusic_shorts_256KBPS.webm" type="audio/mpeg"></audio>
         </div>
       </div>
 
@@ -277,7 +327,31 @@
       </div>
 
       <div class="song-row">
-        <img src="covers/eheads.jpg"Album Art" class="album-art">
+        <img src="covers/rivermaya.jpg" alt="Album Art" class="album-art">
+        <div class="song-details">
+          <span class="song-info">214 <span class="artist-name">| RIVERMAYA</span></span>
+          <audio controls><source src="music/214_by_rivermaya_song_lyrics_youtubeshorts_shorts_48KBPS.mp4" type="audio/mpeg"></audio>
+        </div>
+      </div>
+
+      <div class="song-row">
+        <img src="covers/rico blanco.jpg" alt="Album Art" class="album-art">
+        <div class="song-details">
+          <span class="song-info">Antukin <span class="artist-name">| Rico Blanco</span></span>
+          <audio controls><source src="music/Antukin_-_Rico_Blanco_short_lyrics_48KBPS.webm" type="audio/mpeg"></audio>
+        </div>
+      </div>
+
+      <div class="song-row">
+        <img src="covers/southborder.jpg" alt="Album Art" class="album-art">
+        <div class="song-details">
+          <span class="song-info">Rainbow <span class="artist-name">| South Border</span></span>
+          <audio controls><source src="music/Antukin_-_Rico_Blanco_short_lyrics_48KBPS.webm" type="audio/mpeg"></audio>
+        </div>
+      </div>
+
+      <div class="song-row">
+        <img src="covers/eheads.jpg" alt="Album Art" class="album-art">
         <div class="song-details">
           <span class="song-info">Alapaap <span class="artist-name">| Eraserheads</span></span>
           <audio controls><source src="music/alapaap.webm" type="audio/mpeg"></audio>
