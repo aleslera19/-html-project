@@ -118,14 +118,18 @@
     /* ITEM ROW */
     .item-row { 
       display: flex;
-      align-items: flex-start;
-      gap: 20px;
-      margin-bottom: 25px;
-      padding-bottom: 20px;
+      flex-direction: column; 
+      gap: 15px;
+      margin-bottom: 45px;
+      padding-bottom: 30px;
       border-bottom: 1px solid #eee;
     }
 
-    .item-row:last-child { border-bottom: none; }
+    .item-header {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+    }
 
     .list-photo {
       width: 100px;
@@ -137,24 +141,20 @@
     }
 
     .item-text { flex: 1; }
-    .item-info { display: block; font-weight: bold; color: #2a5db0; font-size: 18px; margin-bottom: 4px; }
+    .item-info { display: block; font-weight: bold; color: #2a5db0; font-size: 20px; margin-bottom: 4px; }
     .genre-label { font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 4px; }
     .director-label { font-size: 13px; color: #444; font-style: italic; display: block; margin-bottom: 8px; }
-    .item-desc { font-weight: normal; color: #555; font-size: 14px; line-height: 1.4; display: block; margin-bottom: 12px; }
+    .item-desc { font-weight: normal; color: #555; font-size: 14px; line-height: 1.4; display: block; }
 
-    /* WATCH CLIP BUTTON */
-    .clip-link {
-      display: inline-block;
-      text-decoration: none;
-      background-color: #ff0000; 
-      color: white;
-      padding: 6px 12px;
-      border-radius: 4px;
-      font-size: 12px;
-      font-weight: bold;
-      transition: 0.3s;
+    /* VIDEO CLIP STYLING */
+    .video-clip {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border-radius: 8px;
+      border: none;
+      background-color: #000;
+      margin-top: 10px;
     }
-    .clip-link:hover { background-color: #cc0000; transform: scale(1.05); }
 
     /* LOGIC */
     #toggle-movies:checked ~ .display-area #movies-card,
@@ -212,7 +212,7 @@
 
 <div class="page">
   <h2>Al's Screen Time</h2>
-  <p style="color: #666; margin-bottom: 40px;">Click the posters below to see my top movie and series picks.</p>
+  <p style="color: #666; margin-bottom: 40px;">Select a category to view my favorites.</p>
 
   <input type="radio" name="category" id="toggle-movies" class="toggle-input">
   <input type="radio" name="category" id="toggle-series" class="toggle-input">
@@ -237,58 +237,63 @@
       <span class="genre-name">The Movie Collection</span>
       
       <div class="item-row">
-        <img src="moviespics/elcamino.jpg" alt="El Camino" class="list-photo">
-        <div class="item-text">
-          <span class="item-info">El Camino</span>
-          <span class="genre-label">Crime | Drama</span>
-          <span class="director-label">Directed by: Vince Gilligan</span>
-          <span class="item-desc">Jesse Pinkman must confront his past and evade the law to secure a final chance at freedom.</span>
-          <a href="https://youtu.be/1JLUn2DFW4w?si=a6XG-wXyRmP0CBsL" target="_blank" class="clip-link">▶ Watch Trailer</a>
+        <div class="item-header">
+            <img src="moviespics/elcamino.jpg" class="list-photo">
+            <div class="item-text">
+                <span class="item-info">El Camino</span>
+                <span class="director-label">Dir. Vince Gilligan</span>
+                <span class="item-desc">Jesse Pinkman's journey to freedom following the events of Breaking Bad.</span>
+            </div>
         </div>
+        <iframe class="video-clip" src="https://www.youtube.com/embed/1JLUn2DFW4w" frameborder="0" allowfullscreen></iframe>
       </div>
 
       <div class="item-row">
-        <img src="moviespics/johnwick.jpg" alt="John Wick" class="list-photo">
-        <div class="item-text">
-          <span class="item-info">John Wick Chapter 1-4</span>
-          <span class="genre-label">Action | Thriller</span>
-          <span class="director-label">Directed by: Chad Stahelski</span>
-          <span class="item-desc">A legendary hitman's relentless war for vengeance and freedom against a global empire of assassins.</span>
-          <a href="https://youtu.be/C0BMx-qxsP4?si=UjQVnSHdX8nmXV7t" target="_blank" class="clip-link">▶ Watch Trailer</a>
+        <div class="item-header">
+            <img src="moviespics/johnwick.jpg" class="list-photo">
+            <div class="item-text">
+                <span class="item-info">John Wick</span>
+                <span class="director-label">Dir. Chad Stahelski</span>
+                <span class="item-desc">A retired hitman is forced back into the underground world of assassins.</span>
+            </div>
         </div>
+        <iframe class="video-clip" src="https://www.youtube.com/embed/C0BMx-qxsP4" frameborder="0" allowfullscreen></iframe>
       </div>
 
       <div class="item-row">
-        <img src="moviespics/grownups.jpg" alt="Grown Ups" class="list-photo">
-        <div class="item-text">
-          <span class="item-info">Grown Ups</span>
-          <span class="genre-label">Comedy</span>
-          <span class="director-label">Directed by: Dennis Dugan</span>
-          <span class="item-desc">Five lifelong friends reunite over a holiday weekend to rediscover their inner children.</span>
-          <a href="https://youtu.be/e01NVCveGkg?si=-ftuISDGxYmJNm6a" target="_blank" class="clip-link">▶ Watch Trailer</a>
+        <div class="item-header">
+            <img src="moviespics/grownups.jpg" class="list-photo">
+            <div class="item-text">
+                <span class="item-info">Grown Ups</span>
+                <span class="director-label">Dir. Dennis Dugan</span>
+                <span class="item-desc">Childhood friends reunite for a 4th of July weekend after their coach passes away.</span>
+            </div>
         </div>
+        <iframe class="video-clip" src="https://www.youtube.com/embed/e01NVCveGkg" frameborder="0" allowfullscreen></iframe>
       </div>
 
       <div class="item-row">
-        <img src="moviespics/whitehouse.jpg" alt="White House Down" class="list-photo">
-        <div class="item-text">
-          <span class="item-info">White House Down</span>
-          <span class="genre-label">Action | Adventure</span>
-          <span class="director-label">Directed by: Roland Emmerich</span>
-          <span class="item-desc">A Capitol Police officer must protect the President when a paramilitary group seizes the White House.</span>
-          <a href="https://youtu.be/hVdXl-_DvZk?si=rrPTsQ_2YOcIZ4NY" target="_blank" class="clip-link">▶ Watch Trailer</a>
+        <div class="item-header">
+            <img src="moviespics/whitehouse.jpg" class="list-photo">
+            <div class="item-text">
+                <span class="item-info">White House Down</span>
+                <span class="director-label">Dir. Roland Emmerich</span>
+                <span class="item-desc">A policeman must save his daughter and the President from a domestic terrorist attack.</span>
+            </div>
         </div>
+        <iframe class="video-clip" src="https://www.youtube.com/embed/hVdXl-_DvZk" frameborder="0" allowfullscreen></iframe>
       </div>
 
       <div class="item-row">
-        <img src="moviespics/coach carter.jpg" alt="Coach Carter" class="list-photo">
-        <div class="item-text">
-          <span class="item-info">Coach Carter</span>
-          <span class="genre-label">Drama | Sport</span>
-          <span class="director-label">Directed by: Thomas Carter</span>
-          <span class="item-desc">A tough basketball coach benches his undefeated team to demand academic excellence.</span>
-          <a href="https://youtu.be/d_GleoanbPE?si=GDWprADpt9eoA-hR" target="_blank" class="clip-link">▶ Watch Trailer</a>
+        <div class="item-header">
+            <img src="moviespics/coach carter.jpg" class="list-photo">
+            <div class="item-text">
+                <span class="item-info">Coach Carter</span>
+                <span class="director-label">Dir. Thomas Carter</span>
+                <span class="item-desc">A high school basketball coach demands his players succeed in the classroom too.</span>
+            </div>
         </div>
+        <iframe class="video-clip" src="https://www.youtube.com/embed/d_GleoanbPE" frameborder="0" allowfullscreen></iframe>
       </div>
     </div>
 
@@ -296,59 +301,64 @@
       <span class="genre-name">Binge-Worthy Series</span>
       
       <div class="item-row">
-        <img src="seriespics/breakingbad.jpg" alt="Breaking Bad" class="list-photo">
-        <div class="item-text">
-          <span class="item-info">Breaking Bad</span>
-          <span class="genre-label">Crime | Drama</span>
-          <span class="director-label">Created by: Vince Gilligan</span>
-          <span class="item-desc">Follow the transformation of Walter White from teacher to kingpin.</span>
-          <a href="https://youtu.be/VFkjBy2b50Q?si=2bEoHN_8J3rJiFbl" target="_blank" class="clip-link">▶ Watch Trailer</a>
+        <div class="item-header">
+            <img src="seriespics/breakingbad.jpg" class="list-photo">
+            <div class="item-text">
+                <span class="item-info">Breaking Bad</span>
+                <span class="director-label">Created by: Vince Gilligan</span>
+                <span class="item-desc">A chemistry teacher turned kingpin. The greatest transformation in TV history.</span>
+            </div>
         </div>
+        <iframe class="video-clip" src="https://www.youtube.com/embed/VFkjBy2b50Q" frameborder="0" allowfullscreen></iframe>
       </div>
 
       <div class="item-row">
-        <img src="seriespics/prisonbreak.jpg" alt="Prison Break" class="list-photo">
-        <div class="item-text">
-          <span class="item-info">Prison Break</span>
-          <span class="genre-label">Action | Crime</span>
-          <span class="director-label">Created by: Paul Scheuring</span>
-          <span class="item-desc">An innocent man goes to prison to break out his brother using a map tattooed on his body.</span>
-          <a href="https://youtu.be/AL9zLctDJaU?si=nVjtikreqpo54Xah" target="_blank" class="clip-link">▶ Watch Trailer</a>
+        <div class="item-header">
+            <img src="seriespics/prisonbreak.jpg" class="list-photo">
+            <div class="item-text">
+                <span class="item-info">Prison Break</span>
+                <span class="director-label">Created by: Paul Scheuring</span>
+                <span class="item-desc">A structural engineer enters prison to break out his wrongly accused brother.</span>
+            </div>
         </div>
+        <iframe class="video-clip" src="https://www.youtube.com/embed/AL9zLctDJaU" frameborder="0" allowfullscreen></iframe>
       </div>
 
       <div class="item-row">
-        <img src="seriespics/ozark.png" alt="Ozark" class="list-photo">
-        <div class="item-text">
-          <span class="item-info">Ozark</span>
-          <span class="genre-label">Crime | Thriller</span>
-          <span class="director-label">Created by: Bill Dubuque & Mark Williams</span>
-          <span class="item-desc">A financial advisor drags his family to the Ozarks to launder money for a drug cartel.</span>
-          <a href="https://youtu.be/5hAXVqrljbs?si=hLn9vCclqOqYOgK9" target="_blank" class="clip-link">▶ Watch Trailer</a>
+        <div class="item-header">
+            <img src="seriespics/ozark.png" class="list-photo">
+            <div class="item-text">
+                <span class="item-info">Ozark</span>
+                <span class="director-label">Created by: Bill Dubuque</span>
+                <span class="item-desc">A family is forced to move to the Ozarks to launder money for a Mexican cartel.</span>
+            </div>
         </div>
+        <iframe class="video-clip" src="https://www.youtube.com/embed/5hAXVqrljbs" frameborder="0" allowfullscreen></iframe>
       </div>
 
       <div class="item-row">
-        <img src="seriespics/saul.jpg" alt="Better Call Saul" class="list-photo">
-        <div class="item-text">
-          <span class="item-info">Better Call Saul</span>
-          <span class="genre-label">Crime | Drama</span>
-          <span class="director-label">Created by: Vince Gilligan & Peter Gould</span>
-          <span class="item-desc">The transformation of Jimmy McGill into the flamboyant criminal lawyer Saul Goodman.</span>
-          <a href="https://youtu.be/HN4oydykJFc?si=vXGm_9Kmvlz59HvA" target="_blank" class="clip-link">▶ Watch Trailer</a>
+        <div class="item-header">
+            <img src="seriespics/saul.jpg" class="list-photo">
+            <div class="item-text">
+                <span class="item-info">Better Call Saul</span>
+                <span class="director-label">Created by: Vince Gilligan</span>
+                <span class="item-desc">The origin story of Saul Goodman and his descent into the criminal world.</span>
+            </div>
         </div>
+        <iframe class="video-clip" src="https://www.youtube.com/embed/HN4oydykJFc" frameborder="0" allowfullscreen></iframe>
       </div>
 
       <div class="item-row">
-        <img src="seriespics/twd.jpg" alt="Walking Dead" class="list-photo">
-        <div class="item-text">
-          <span class="item-info">The Walking Dead</span>
-          <span class="genre-label">Horror | Sci-Fi</span>
-          <span class="director-label">Developed by: Frank Darabont</span>
-          <span class="item-desc">Survivors struggle to stay alive against the undead in a zombie apocalypse.</span>
-          <a href="https://youtu.be/cu2ApTImBKc?si=jFFkauNFpb08ADvb" target="_blank" class="clip-link">▶ Watch Trailer</a>
+        <div class="item-header">
+            <img src="seriespics/twd.jpg" class="list-photo">
+            <div class="item-text">
+                <span class="item-info">The Walking Dead</span>
+                <span class="director-label">Developed by: Frank Darabont</span>
+                <span class="item-desc">Survivors navigate a world overrun by the undead.</span>
+            </div>
         </div>
-      </div> 
+        <iframe class="video-clip" src="https://www.youtube.com/embed/cu2ApTImBKc" frameborder="0" allowfullscreen></iframe>
+      </div>
     </div>
 
   </div> 
