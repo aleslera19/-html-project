@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Future Stops - Explore with Al</title>
+
+  <style>
+    
+    body { 
+      background-color: #f4f4f4; 
+      font-family: Arial, sans-serif; 
+      margin: 0; 
+      padding: 0; 
+    }
+
+    header {
+      background-color: #eaeaea;
+      padding: 10px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ccc;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 { margin: 0; font-size: 24px; }
+
+    .dropdown { position: relative; display: inline-block; }
+    .dropbtn { 
+      text-decoration: none; 
+      font-weight: bold; 
+      color: #2a5db0; 
+      font-size: 18px; 
+      padding: 20px 10px; 
+      display: inline-block; 
+    }
+
+    .dropdown-content { 
+      display: none; 
+      position: absolute; 
+      right: 0; 
+      background-color: #eaeaea; 
+      min-width: 200px; 
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.1); 
+      border: 1px solid #ccc; 
+      border-radius: 5px; 
+      top: 100%; 
+    }
+
+    .dropdown:hover .dropdown-content { display: block; }
+    .dropdown-content a { 
+      color: #2a5db0; 
+      padding: 12px 16px; 
+      text-decoration: none; 
+      display: block; 
+      font-weight: bold; 
+      border-bottom: 1px solid #ddd; 
+    }
+    .dropdown-content a:hover { background-color: #d1d1d1; }
+
+    
+    .page {
+      max-width: 1100px;
+      width: 90%;
+      background: #eaeaea;
+      margin: 40px auto;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.05);
+    }
+
+    h2 { 
+      color: #333; 
+      border-left: 5px solid #2a5db0; 
+      padding-left: 15px; 
+      margin-bottom: 10px; 
+    }
+
+    .intro-text {
+      font-size: 18px;
+      color: #555;
+      margin-bottom: 40px;
+    }
+
+    
+    .list-container { 
+      display: grid;
+      
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+      gap: 25px;
+      margin-top: 30px; 
+    }
+
+    .list-item {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      border-top: 6px solid #2a5db0; 
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .list-item:hover { 
+      transform: translateY(-8px); 
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
+    }
+
+    .item-title { 
+      font-weight: bold; 
+      color: #2a5db0; 
+      margin-bottom: 15px; 
+      font-size: 14px; 
+      text-transform: uppercase; 
+      letter-spacing: 1.5px; 
+      display: flex;
+      align-items: center;
+    }
+
+    
+    .item-title::before {
+      content: "★";
+      margin-right: 8px;
+      font-size: 12px;
+    }
+
+    .item-desc { 
+      color: #444; 
+      font-size: 17px; 
+      line-height: 1.6; 
+      flex-grow: 1; 
+    }
+
+    hr { border: none; height: 1px; background-color: #ccc; margin: 50px 0; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1><em>Explore with Al</em></h1>
+  <nav>
+    <div class="dropdown">
+      <a href="#" class="dropbtn">Explore ▾</a>
+      <div class="dropdown-content">
+        <a href="index.html">Main Page</a>
+        <a href="biography.html">My Personal Journey</a>
+        <a href="blog1.html">Why I Prefer Edge</a>
+        <a href="blog2.html">IT Realities</a>
+        <a href="blog3.html">The 5 Year Goal</a>
+        <a href="gallery.html">Photo Gallery</a>
+        <a href="mybeats.html">Tuned In</a>
+        <a href="filmshows.html">Night Owl Binge List</a>
+        <a href="dreamplaces.html">My Dream Escapes</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div class="page">
+  <h2>Future Stops</h2>
+  <p class="intro-text">A roadmap of my ambitions, from completing my IT degree to exploring the world and cherishing family moments.</p>
+
+  <div class="list-container">
+    
+    <div class="list-item">
+      <div>
+        <span class="item-title">College Goal</span>
+        <span class="item-desc">I want to study hard and complete all my requirements so I can graduate from college with my IT degree and start my career the right way.</span>
+      </div>
+    </div>
+
+    <div class="list-item">
+      <div>
+        <span class="item-title">Cybersecurity Career</span>
+        <span class="item-desc">I want to be very successful in the IT field by becoming a specialist in cybersecurity who helps protect people and companies from online dangers.</span>
+      </div>
+    </div>
+
+    <div class="list-item">
+      <div>
+        <span class="item-title">World Travel</span>
+        <span class="item-desc">I want to travel across the world to visit many beautiful countries, learn about different cultures, and see famous places with my own eyes.</span>
+      </div>
+    </div>
+
+    <div class="list-item">
+      <div>
+        <span class="item-title">Family Connection</span>
+        <span class="item-desc">I want to spend as much time as I can with my parents and take good care of them so we can enjoy a long and happy life together as a family.</span>
+      </div>
+    </div>
+
+    <div class="list-item">
+      <div>
+        <span class="item-title">Life and Happiness</span>
+        <span class="item-desc">I want to have a very happy life where I feel at peace in my mind, stay healthy, and find joy in the work I do and the people I love every single day.</span>
+      </div>
+    </div>
+
+  </div>
+
+  <hr>
+  <p style="text-align: center; color: #666; font-style: italic;">"Dream big, work hard, and stay humble."</p>
+</div>
+
+</body>
+</html>

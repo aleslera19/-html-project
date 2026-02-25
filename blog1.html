@@ -12,7 +12,6 @@
       padding: 0;
     }
 
-    /* HEADER & DROPDOWN STYLES */
     header {
       background-color: #eaeaea;
       padding: 10px 40px;
@@ -60,7 +59,6 @@
     .dropdown-content a:hover { background-color: #d1d1d1; }
     .dropdown:hover .dropdown-content { display: block; }
 
-    /* PAGE LAYOUT */
     .page {
       max-width: 1000px;
       background: #eaeaea;
@@ -68,18 +66,27 @@
       padding: 40px;
       border-radius: 10px;
       margin-bottom: 50px;
-      overflow: auto; /* Clears the float so the container wraps around the image */
+      overflow: auto; 
     }
 
-    /* NEW IMAGE STYLE */
+    /* --- ENHANCED IMAGE STYLE --- */
     .article-img {
       float: right;
       margin-left: 20px;
       margin-bottom: 20px;
       border-radius: 8px;
-      max-width: 300px; /* Adjust size as needed */
+      max-width: 300px; 
       height: auto;
       box-shadow: 2px 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effect */
+      cursor: pointer;
+      border: 3px solid white;
+    }
+
+    /* Hover effect to show it's clickable */
+    .article-img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
     }
 
     h1.blog-title {
@@ -136,10 +143,12 @@
         <a href="index.html">Main Page</a>
         <a href="biography.html">My Personal Journey</a>
         <a href="blog2.html">IT Realities</a>
-        <a href="blog3.html">The 5-Year Goal</a>
+        <a href="blog3.html">The 5 Year Goal</a>
         <a href="gallery.html">Photo Gallery</a>
         <a href="mybeats.html">Tuned In</a>
         <a href="filmshows.html">Night Owl Binge List</a>
+        <a href="dreamplaces.html">My Dream Escapes</a>
+        <a href="bucketlist.html">Future Stops</a>
       </div>
     </div>
   </nav>
@@ -156,7 +165,9 @@
 
   <hr>
 
-  <img src="blogstories1-3pics/edge.jpg" alt="Microsoft Edge Interface" class="article-img">
+  <a href="blogstories1-3pics/edge.jpg" target="_blank">
+    <img src="blogstories1-3pics/edge.jpg" alt="Microsoft Edge Interface" class="article-img">
+  </a>
 
   <h2><strong>My Experience</strong></h2>
   <p>

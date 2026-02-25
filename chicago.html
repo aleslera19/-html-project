@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chicago - Explore with Al</title>
+
+  <style>
+    /* --- NAVIGATION & BRANDING --- */
+    body {
+      background-color: #f4f4f4;
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #eaeaea;
+      padding: 10px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ccc;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 { margin: 0; font-size: 24px; }
+
+    .dropdown { position: relative; display: inline-block; }
+    .dropbtn {
+      text-decoration: none;
+      font-weight: bold;
+      color: #2a5db0;
+      font-size: 18px;
+      padding: 20px 10px;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none; 
+      position: absolute;
+      right: 0; 
+      background-color: #eaeaea;
+      min-width: 200px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+      z-index: 1001;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      top: 100%; 
+    }
+
+    .dropdown:hover .dropdown-content { display: block; }
+
+    .dropdown-content a {
+      color: #2a5db0;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      font-weight: bold;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .dropdown-content a:hover { background-color: #d1d1d1; color: black; }
+
+    /* --- PAGE CONTENT --- */
+    .page {
+      max-width: 900px;
+      width: 90%;
+      background: #eaeaea;
+      margin: 40px auto;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.05);
+    }
+
+    h2 { 
+      color: #333; 
+      border-left: 5px solid #2a5db0; 
+      padding-left: 15px; 
+      margin-bottom: 20px; 
+    }
+
+    h3 {
+      color: #2a5db0;
+      margin-top: 30px;
+      margin-bottom: 10px;
+    }
+
+    .content-section {
+      text-align: left;
+      line-height: 1.8;
+      color: #444;
+      font-size: 18px;
+    }
+
+    /* --- THE FIX: MATCHING IMAGE SIZES --- */
+    .image-container {
+      display: flex; /* Switched from grid to flex for better stretching */
+      gap: 20px;
+      margin-top: 30px;
+      align-items: stretch; /* Forces both boxes to have the same height */
+    }
+
+    .image-box {
+      flex: 1; /* Makes both columns equal width */
+      background: #fff;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .image-box img {
+      width: 100%;
+      height: 100%; /* Fills the stretched container height */
+      object-fit: cover; /* Prevents distortion/stretching of the 2nd photo */
+      border-radius: 5px;
+      display: block;
+    }
+
+    .caption {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #666;
+      text-align: center;
+      font-style: italic;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 10px 20px;
+      background-color: #2a5db0;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .back-btn:hover { background-color: #1e4484; }
+
+    hr { border: none; height: 1px; background-color: #ccc; margin: 40px 0; }
+
+    /* Mobile Responsive */
+    @media (max-width: 600px) {
+      .image-container {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1><em>Explore with Al</em></h1>
+  <nav>
+    <div class="dropdown">
+      <a href="#" class="dropbtn">Explore ▾</a>
+      <div class="dropdown-content">
+        <a href="index.html">Main Page</a>
+        <a href="biography.html">My Personal Journey</a>
+        <a href="blog1.html">Why I Prefer Edge</a>
+        <a href="blog2.html">IT Realities</a>
+        <a href="blog3.html">The 5 Year Goal</a>
+        <a href="gallery.html">Photo Gallery</a>
+        <a href="mybeats.html">Tuned In</a>
+        <a href="filmshows.html">Night Owl Binge List</a>
+        <a href="bucketlist.html">Future Stops</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div class="page">
+  <h2>The Windy City: Chicago</h2>
+  
+  <div class="content-section">
+    <h3>Skyscrapers and River Tours</h3>
+    <p>
+      Chicago is a dream destination for anyone who appreciates grand engineering. The city's skyline is filled with <strong>iconic structures</strong> like the Willis Tower and the John Hancock Center. I’ve always wanted to take one of their famous architecture boat tours along the Chicago River to see these masterpieces from the water and learn the history behind the birthplace of the skyscraper.
+    </p>
+
+    <h3>Meeting "The Spirit" at the United Center</h3>
+    <p>
+      As a basketball enthusiast, no trip to Chicago would be complete without a pilgrimage to the <strong>United Center</strong>. Seeing the legendary statue of <strong>Michael Jordan</strong>, known as "The Spirit," is a major bucket list item. Standing before the bronze tribute to the greatest to ever play the game is something every fan needs to experience in person.
+    </p>
+  </div>
+
+  <div class="image-container">
+    <div class="image-box">
+      <img src="photo collage/willis2.jpg" alt="Iconic Chicago Skyline">
+      <p class="caption">The architectural heart of America.</p>
+    </div>
+
+    <div class="image-box">
+      <img src="photo collage/jordanstatue.jpg" alt="Michael Jordan Statue at United Center">
+      <p class="caption">"The Spirit" at the United Center.</p>
+    </div>
+  </div>
+
+  <a href="bucketlist.html" class="back-btn">← Back to Aspirations</a>
+
+  <hr>
+  <p style="text-align: center; color: #777; font-style: italic;">"Dream big, travel far."</p>
+</div>
+
+</body>
+</html>

@@ -12,7 +12,6 @@
       padding: 0;
     }
 
-    /* HEADER & DROPDOWN STYLES */
     header {
       background-color: #eaeaea;
       padding: 10px 40px;
@@ -60,7 +59,6 @@
     .dropdown-content a:hover { background-color: #d1d1d1; }
     .dropdown:hover .dropdown-content { display: block; }
 
-    /* PAGE LAYOUT */
     .page {
       max-width: 1000px;
       background: #eaeaea;
@@ -86,10 +84,24 @@
       color: #444;
     }
 
-    ul {
-      margin-left: 40px;
-      line-height: 1.7;
-      color: #444;
+    /* --- ENHANCED PHOTO STYLING --- */
+    .blog-image {
+      float: right;            /* Pushes image to the right */
+      width: 300px;           /* Adjust size as needed */
+      height: auto;
+      margin-left: 20px;      /* Space between text and image */
+      margin-bottom: 15px;    /* Space below image */
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border: 3px solid white;
+      transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effect */
+      cursor: pointer;
+    }
+
+    /* Hover effect to show it's clickable */
+    .blog-image:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
     }
 
     hr {
@@ -116,6 +128,12 @@
     .back-btn a:hover {
       background-color: #1e437e;
     }
+
+    .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
   </style>
 </head>
 <body>
@@ -133,16 +151,23 @@
         <a href="gallery.html">Photo Gallery</a>
         <a href="mybeats.html">Tuned In</a>
         <a href="filmshows.html">Night Owl Binge List</a>
+        <a href="dreamplaces.html">My Dream Escapes</a>
+        <a href="bucketlist.html">Future Stops</a>
       </div>
     </div>
   </nav>
 </header>
 
-<div class="page">
+<div class="page clearfix">
 
   <h1 class="blog-title"><em>From Student to Professional: My 5-Year Vision</em></h1>
 
   <h2><strong>Where I’m Heading: My IT Journey Begins</strong></h2>
+  
+  <a href="covers/worklife.jpg" target="_blank">
+    <img src="covers/worklife.jpg" alt="My IT Vision" class="blog-image">
+  </a>
+
   <p>
       Simula nung nag-start ako sa IT course, lagi ko naiisip kung saan ako makakarating in the next five years. Makakahanap kaya ako ng stable na trabaho sa field na ito? Para sa akin, <strong>importante talga ang magplano sa hinaharap</strong>, hindi lang para sa career kundi pati sa personal na buhay. Gusto kong i-reflect kung ano yung gusto kong ma-achieve professionally at personally. Iniisip ko rin na kailangan ko magsikap ngayon para mas maging maayos ang buhay sa hinaharap.
   </p>

@@ -12,7 +12,6 @@
       padding: 0;
     }
 
-    /* HEADER & DROPDOWN STYLES */
     header {
       background-color: #eaeaea;
       padding: 10px 40px;
@@ -60,7 +59,6 @@
     .dropdown-content a:hover { background-color: #d1d1d1; }
     .dropdown:hover .dropdown-content { display: block; }
 
-    /* PAGE LAYOUT */
     .page {
       max-width: 1000px;
       background: #eaeaea;
@@ -105,6 +103,14 @@
       margin-left: 15px;
       margin-bottom: 10px;
       border-radius: 8px;
+      transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
+      cursor: pointer;
+    }
+
+    /* Makes the photo pop when hovered */
+    .side-img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     }
 
     .back-btn {
@@ -135,12 +141,14 @@
       <a href="#" class="dropbtn">Explore ▾</a>
       <div class="dropdown-content">
         <a href="index.html">Main Page</a>
-        <a href="biography.html">My Personal Journey</a>
-        <a href="blog1.html">Why I Prefer Edge</a>
-        <a href="blog3.html">The 5-Year Goal</a>
-        <a href="gallery.html">Photo Gallery</a>
-        <a href="mybeats.html">Tuned In</a>
-        <a href="filmshows.html">Night Owl Binge List</a>
+        <a href="biography.html" target="_blank">My Personal Journey</a>
+        <a href="blog1.html" target="_blank">Why I Prefer Edge</a>
+        <a href="blog3.html" target="_blank">The 5-Year Goal</a>
+        <a href="gallery.html" target="_blank">Photo Gallery</a>
+        <a href="mybeats.html" target="_blank">Tuned In</a>
+        <a href="filmshows.html" target="_blank">Night Owl Binge List</a>
+        <a href="dreamplaces.html" target="_blank">My Dream Escapes</a>
+         <a href="bucketlist.html" target="_blank">Future Stops</a>
       </div>
     </div>
   </nav>
@@ -152,7 +160,9 @@
 
   <h2><strong>Getting Started</strong></h2>
   <p>
-    <img src="blogstories1-3pics/IT.jpg" alt="IT Student Photo" class="side-img">
+    <a href="blogstories1-3pics/IT.jpg" target="_blank">
+      <img src="blogstories1-3pics/IT.jpg" alt="IT Student Photo" class="side-img">
+    </a>
     Noong nagdesisyon ako na kunin ang course na <strong>Information Technology,</strong> marami akong mataas na expectations tungkol sa magiging college life ko. Akala ko puro coding, hardware, at paggawa ng systems ang magiging focus ng course na ito. Inisip ko rin na dahil interesado ako sa technology, magiging madali lang para sa akin ang mga units. Excited ako sa idea na matututo ako sa programming at kung paano gumawang mga application. Ngunit habang tumatagal, unti-unti kong narerealize na mas malawak at mas mahirap pala ang course na IT kaysa sa ineexpect ko.
   </p>
 
