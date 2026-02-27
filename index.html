@@ -15,7 +15,7 @@
 
     header {
       background-color: #eaeaea;
-      padding: 10px 40px; /* Reduced padding to help the hover bridge */
+      padding: 10px 40px; 
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -30,7 +30,7 @@
       font-size: 24px;
     }
 
-    /* --- STICKY DROPDOWN NAVIGATION --- */
+    
     .dropdown {
       position: relative;
       display: inline-block;
@@ -41,7 +41,7 @@
       font-weight: bold;
       color: #2a5db0;
       font-size: 18px;
-      padding: 20px 10px; /* Vertical padding makes the hover area larger */
+      padding: 20px 10px; 
       display: inline-block;
       transition: color 0.3s;
     }
@@ -56,18 +56,18 @@
       z-index: 1001;
       border: 1px solid #ccc;
       border-radius: 5px;
-      /* Ensures there is no gap between the button and the list */
+      
       top: 100%; 
     }
 
-    /* THE FIX: Invisible bridge so the menu doesn't disappear when moving the mouse */
+    
     .dropdown::after {
       content: "";
       position: absolute;
       top: 100%;
       right: 0;
       width: 100%;
-      height: 20px; /* Bridges any tiny gap */
+      height: 20px; 
     }
 
     .dropdown-content a {
@@ -88,7 +88,7 @@
       color: black;
     }
 
-    /* Keep the menu open when hovering the button OR the content itself */
+    
     .dropdown:hover .dropdown-content {
       display: block;
     }
@@ -97,7 +97,7 @@
       color: black;
     }
 
-    /* --- PAGE CONTENT STYLES --- */
+    
     .page {
       max-width: 1400px;
       width: 90%;
